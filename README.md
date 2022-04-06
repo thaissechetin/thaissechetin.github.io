@@ -1,2 +1,2 @@
-# thaissechetin.github.io
+# Portifólio da Thaís
 Portfólio de projetos Front-End
