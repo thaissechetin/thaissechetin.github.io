@@ -1,0 +1,138 @@
+
+PASSO A PASSO PARA CRIAR O SIMPLICITY
+-----------------------------------------------------------------------------------
+1- Header:
+
+-Criamos um editor de texto com os conteúdos para colocar no site 
+-Criamos o html da página começando pelo :
+header, main e section 
+-criamos o logo simplicity com o link para o home
+-criamos o menu na tag h2
+-criamos o menu em lista dentro do nav
+
+-------------------------------------------------------------------------------------
+2- main ( conteúdo principal ):
+
+- contamos quantas sessoes tem o site e criamos as sections correspondentes
+- criamos uma class para cada uma com os nomes correspondentes ao tema 
+-copiamos e colamos os conteúdos nas sessoes correspondentes 
+ ------------------------------------------------------------------------------------
+ 3 - Criamos o footer 
+-------------------------------------------------------------------------------------
+ 4  CSS básico:
+
+ -Criamos o arquivo externo do css 
+ -alterei o comportamento do css com o box model
+ - configurei a cor do body e a fonte padrão do site
+ -Configuramos a fonte no elemento raiz 
+ -deixamos as imagens dos sites flexíveis 
+ -ativamos o dev tools para o mobile first (f12) e ativamos o simulador de tela
+ -deixamos o tamanho de tela (deixei em 420 x 500)
+ -testamos o servidor com o firefox 
+ -Fizemos o reset de elemntos, removemos os valores padrões para não causar inconsistência nos valores que criarmos, pois eles somam aos valores que já existiam. - boas práticas - 
+ !!!(PESQUISAR CSS RESET)!!!
+
+ - Criamos Regra para o h1 com:
+ Fonte impact
+ Tamanho da fonte: 1.5rem
+ Peso da fonte: normal
+ - Reparamos que a cor do logo não muda porque na verdade ele é um link 
+ - retiramos o sublinhado dos links (a)
+  -mudamos a configurações do logo usando o seletor h1 a
+  - mudamos a letra para caixa alto uppercase no seletor de header, para todos os ítens de cabeçalho
+  -colocamos cores no header para destacar a área e melhorar a visualização
+  -tecnica nova: posicionamento 
+  ESTUDAR POSITION- RELATIVE, ABSOLUTE, FIXED...
+  - Deixamos os itens do cabeçaho lado a lado como flex box
+
+  -criamos uma div dentro do header para que o menu e o header fiquem responsivos, para que ao aumentar a tela, o header não fique "curto" e para podermos manipular o menu sem alterar o header - criamos a div no html, antes do h1 do header e depois de fechar a tag nav, criamos uma classe também e chamamos de limitador. Assim, a os elementos do cabeçãlho não sao mais filhos do header e sim da div;
+
+  - criamos regras para textos e links do menu
+  -Criamos uma classe para a lista do menu e configuramos
+  - configuramos display o menu pata inline block para espaçar melhor 
+  - Alinhamos o menu com o display flex e os align itens e justify content
+  - criamos uma classe para o menu abrir chamada "aberto" e colocamos na lista de itens do menu, ao lado da class links menu
+
+  -fizemos isso para experimentar o menu aberto , depois desativamos, pois vamos dar o comportamento do site nesse sentido o  com javascript
+
+ 
+  - ---------------------------------------------------------------------------------
+5 - IMAGEM DE DESTAQUE
+-criamos uma classe chamada destaque e configuramos a imagem de destaque
+-alteramos a altura da imagem de destaque e do header . limitador  - 90% e 10%
+
+- criamos classes para a area de destaque e usamos medidas em vw usando função clamp ( valores minimo, ideal, máximo)
+
+- fizemos a animação da imagem de destaque usando keyframes em duas etapas: estapa 1 -regra de animação
+
+-etapa 2 chamar e configurar animação
+-fizemos a sintaxe aberta e a abreviada
+
+- centralizamos as classes front end, historia e localizaçao
+- criamos regras para o article e o h2 para devolvermos o espaçamento deles
+-tirei duvida sobre qdo usar o rem e o px , a resposta é: depende do que vc vai fazer...elementos que o tamanho vaiser fixo,não vai alterar muito, pode ficar em px. 
+
+- alteramos o espaçamento do h2 e do parágrafo, já que antes zeramos os espaços entre eles no reset.
+
+-alteramos a parte de historia da internet, criando uma regra ".historia " com background image,para ficar com a imagem do video do youtube com imagem de fundo
+-para o fundo madeira nao se mexer, usamos a propriedade attachemnt de valor fixo
+-ajustamos a largura  e largura máxima do video paradeixar o video responsivo e assim, diminuir o numero de medias queires futuramente
+-não foi alterado nada no mapa, o tamanho já é u=um tamanho bom 
+-alteramos o rodapé com o footer com display flex para ajudar no alinhamento vertical e horizntal, já que o text align só alinha horizontalmente e usamos os complemetos de align itens e justify content.
+-mudamos a altura do rodapé
+------------------------------------------------------------------------------------------
+6- Media Queires
+
+-fizemos a media queire do menu para esconder qdo tiver em uma tela menor que 530px
+- fizemos um ajuste de tela media queire para uma tela com altura minina de 800px
+
+
+
+-------------------------------------------------------------------------------------
+
+7- Criar as novas páginas do site
+
+-criamos a pagina de produtos, salvando a pagina index e renomeando
+-testamos os links-
+-configuramos o css, acrescentando a classe limitador no novo conteudo no html
+-aprendemos boas práticas: fazer as meia queires depois de tudo no css
+- configuramos a tabela
+-usamos o last child e o nth child para formatar partes especificas da tabela 
+-usamos o nth child (even) para formatar 
+
+-página de contato = o rodapé ficou grudado no conteudo, mto alto, então para resolver isso, usamos uma regra de flex box
+-fizemos os formulários da pagina de contato com nome, e mail, data de nascinemto,idade, sexo, interesses, assunto, mensagem e botoes de enviar ( optei oir um de limpar mensagem tb)
+-estilizamos o formulário eusamoa a pseudo classe not
+-------------------------------------------------------------------------------------------------
+publicação
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+estudar: display
+estudar display flex 
+viewport - urgente
+paralax
+estudar o last child
+

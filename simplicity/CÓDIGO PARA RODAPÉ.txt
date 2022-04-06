@@ -1,0 +1,13 @@
+## Solução do Rodapé  ##
+
+-Referência: https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
+
+-Código necessário:
+
+1) Flex Container: coloque estas linhas na regra do body:
+display: flex; 
+flex-direction: column; 
+min-height: 100vh; 
+
+2) Flex Item: crie uma regra para o main conforme abaixo:
+main { flex: 1; }

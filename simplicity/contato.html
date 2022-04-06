@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title> Contato - Simplicity</title>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="limitador">
+            <h1><a href="index.html">Simplicity</a></h1>
+            <nav>
+                <h2><a href="#">Menu &equiv; </a></h2>
+                <!-- Link Falso, onde se integrará o Java Script. O comportamento do menu será em JS. -->
+                <!-- No mercado de trabalho, o menu é feito em listas, mais fáceis de serem organizados, como faremos abaixo. -->
+                <ul class="links-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="produtos.html"> Produtos</a></li>
+                    <li><a href="servicos.html">Servicos</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <!-- atalhos: li*4>a onde: 4 itens de lista com links dentro -->
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+
+    <main>
+
+        <section class="conteudo limitador">
+
+            <h2>Contato</h2>
+
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero dolorum, maxime et consequatur architecto perspiciatis impedit ullam. Facilis sapiente magni accusantium consectetur qui omnis, consequatur autem iusto sunt tenetur id!</p>
+
+<p>Incidunt illum, voluptatem reprehenderit quibusdam minus temporibus rem fugiat odit earum ipsum ratione excepturi quasi fugit suscipit libero, recusandae repellat culpa. Aspernatur natus omnis ad aperiam magnam suscipit, praesentium quasi.</p>
+
+            <form action="" method="post">
+                <div>
+                    <label for="">Nome:</label> <!--  o "for" tem que estar de acordo com o id, essencial para acessibilidade-->
+                    <input type="text" name="nome" id="nome" required>
+                </div>
+
+                <div>
+                    <label for="">E-mail:</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+
+                <div>
+                    <label for="Data">Data de nascimento:</label>
+                    <input type="date" name="data" id="Data">
+                </div>  <!-- colocamos em div para poder deixar um abaixo doouttro sem perder tempo fazendo css -->
+
+                <div>
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" name="elefone" id="telefone">
+                </div>
+
+                <div>
+                    <label for="idade">Idade:</label>
+                    <input type="number" name="idade" id="idade" min="18" max="150">
+                 
+                </div>
+
+                <div>
+                    <p>Sexo:</p>
+                    <input type="radio" name="sexo" id="masculino">  <!-- radio:seleção unica -->
+                    <label for="masculino">Masculino</label>
+
+                    <input type="radio" name="sexo" id="feminino">
+                    <label for="feminino">Feminino</label>
+                </div>
+
+                <div>
+                    <p>Interesses:</p>
+
+                    <input type="checkbox" name="interesses" id="musica">
+                    <label for="musica">Música</label>
+
+                    <input type="checkbox" name="interesses" id="filmes">
+                    <label for="filmes">Filmes</label>
+
+                    <input type="checkbox" name="interesses" id="esportes">
+                    <label for="esportes">Esportes</label>
+
+                    <input type="checkbox" name="interesses" id="tecnologia">
+                    <label for="tecnologia">Tecnologia</label>  
+                </div>
+
+                <div>
+                    <label for="assunto">Assunto:</label>
+                    <select name="assunto" id="assunto">
+                        <option ></option> <!-- deixar um vazio de proposito para o usuario escolher uma das opcoes -->
+                        <option >Dúvidas</option>
+                        <option >Elogios</option>
+                        <option >Reclamações</option>
+                        <option >Outros</option>
+                    </select>
+
+                </div>
+
+                <div>
+                    <label for="mensagem">Deixe uma mensagem:</label> <br> <!-- o br vai deixar a caixa de mensagem embaixo -->
+                    <textarea name="mensagem" id="mensagem" cols="20" rows="5"></textarea>
+                </div>
+
+                <button type="submit">ENVIAR</button>
+                <!-- pode ser assim tb:
+                input type="button value="enivar dados"> -->
+
+                <button type="reset">LIMPAR</button>
+               
+
+
+            </form>
+
+        </section>
+
+
+    </main>
+
+    <footer>
+
+        <p>Simplicity é um site fictício desenvolvido educacionalmente
+            <br>Senac Penha - 2022
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

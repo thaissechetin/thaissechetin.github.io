@@ -1,0 +1,360 @@
+*, *::after, *::before { box-sizing: border-box; }
+
+html { font-size: 14px; }
+
+body { 
+        background-color: whitesmoke;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        /* Consertar o problema do rodapé:
+        etapa 1: colocar o body em modo flex e definir a altura mínima usando a viewport como referência */
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+ 
+     }
+
+      /* etapa 2: fazer o conteúdo (main) ocupar todo o espaço necessário para empurrar o rodapé pra baixo */
+      main { flex: 1; }
+
+
+img { max-width: 100%;} /* deixa as imagens do site flexíveis */
+
+/* reset de elementos */ 
+body, h1, h2, h3, p, figure {
+    margin: 0%;
+    padding: 0%;
+}   
+
+h1 {                /* logo simplicity */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    font-weight:normal;
+}
+
+a { text-decoration: none; }
+
+
+h1 a {
+    background-color:black;
+    color:orangered;
+    border-radius: 5px;
+    text-shadow: 1px 1px 1px yellow;
+    padding: 0.3rem 1rem;
+}
+
+header { 
+    background-color:whitesmoke;
+    text-transform: uppercase;
+    position: sticky; /* deixa o cabeçalho fixo */
+    top: 0%; 
+    /* técnica de posicionamento position com coordenadas, ajudando a deixar o elemento em partes especificas da página 
+    para cabeçaho e rodapé, use o sticky = top 0%*/
+
+    }
+
+    
+/* regra para um elemento  (no caso a div) com a classe limitador E dentro do header 
+    IMPORTANTE: O flex configurado aqui funcionará somente para a classe aplicada na div dentro do header.Alpém disso, ela também estará recebendo max width e margin vindos da regra da classe.*/
+   
+header .limitador {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: aquamarine; */
+    height: 10vh;
+}
+
+
+/* regra para QUALQUER elemento com a classe limitador */
+.limitador {
+    max-width: 1100px;
+    margin: auto;
+    /* background-color: aqua; */
+    max-width: 95%;
+
+    
+/* regras para texto /link menu */
+}
+nav h2 { text-align: right; }                                                                   
+
+nav h2 a {
+    color: black;
+    font-size: 1.2rem;
+    padding: 1rem;
+    display: inline-block; /* deixa o espaçamento mais bem definido */
+}
+
+nav h2 a:hover,
+.links-menu a:hover,
+nav h2 a:focus,
+.links-menu a:focus { /* ativa a navegação pelo teclado */
+    background-color: blueviolet;
+}
+
+.links-menu {
+    list-style-type: none; /* list-style tb funciona */
+    padding: 0%;
+    margin: 0%;
+    display: none; 
+    /* esta propriedade" display none" será usada posteriormente para esconder a lista */
+
+}
+
+.links-menu a {
+    color: black;
+    font-weight: bold;
+
+    /* background-color: yellow; */
+    height: 30px; /* porcentagem é flexivel, px é fixo */
+    display: flex;/* largura e altura não funcionam bem no inline, por isso usa o display. O flex ajuda a resolver as dimensões e tb de alinhamento. */
+    justify-content: center;
+    align-items: center; /* CONTENT E ALIGN SÃO ITENS OPCIONAIS COM O FLEX, MAS ELES NÃO PODEM SER USDOS SEM O FLEX */
+
+    /* tudo o que tiver a ver com alinhamento e espaçamento: usar o display flex */
+}  
+
+/* Esta regra somente irá funcionar quando as duas classes estiverem juntas (a classe "links menu" e a classe "aberto") 
+OBS: Esta regra será aplicada posteriormente com o auxílio de programação JavaScript*/
+.links-menu.aberto {
+    /* neste ponto, usamos o felx para voltar a exibir o menu (quandi aberto) */
+    display: flex;
+
+    /* e fazemos com que os links apareçam verticalmente */
+    /* flex-direction: column; */
+    
+    /* usamos position e coordenadas para garantir o posicionamento correto do menu quando aberto */
+    position: absolute;
+    flex-direction: column;
+    right: 0;
+    left: 0; 
+}
+
+
+
+.destaque {
+    background-image: url(../imagens/fundo-destaque.jpg);
+    color: white;
+    height: 90vh;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; /* ALINHA ITEM POR ITEM */
+    align-content: center; /* ALINHA TUDO DENTRO DO GRUPO (H2 E P ) AO CENTRO */
+}
+
+/* vh e vw, medidas de imagens responsivas */
+
+/* sem esta definição de tamanho, o flex-wrap não funciona */
+.destaque h2, 
+.destaque p {
+    width: 100%;
+}
+
+.destaque h2 {
+    /* fonte responsiva usando função clamp(minimo, ideal, máximo) */
+    font-size: clamp(2rem, 10vw, 7rem);
+
+    /* estapa de animação 2: cgamar e configurar a animação */
+
+    /* animation-name: aparecer;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    animation-fill-mode: backwards; */
+
+    /* sintaxe abreviada */
+    animation: aparecer 3s 2s backwards
+    
+ }
+
+
+.destaque p {
+    font-size: clamp(1.5rem, 3vw, 4rem);
+    font-weight: bold;
+ }
+
+ /* etapa 1: regra de animação */
+ @keyframes aparecer { 
+     from { 
+         opacity: 0;
+         transform: translateY(-100vh); 
+         
+        }   
+     
+     
+     to { 
+         opacity: 1; 
+        transform: translateY(0);
+    }     
+ }
+
+ .front-end,
+ .historia,
+ .localizacao { text-align: center;}
+
+ article h2 { padding: 1rem; }
+
+ article p { padding: 0.5rem 0;}
+
+ .historia {
+     background-image: url(../imagens/fundo-madeira.jpg);
+     background-attachment: fixed;
+     background-size: cover; /* opcional,para a imagem cobrir o espaço todo em um site responsivo */
+
+ }
+
+
+.historia h2 {
+    color: white;
+    text-shadow: black 1px 1px 5px;
+    padding: 5px;
+}
+
+.historia iframe {
+    width: 100%; /* pra deixar sempre responsivo */
+    max-width: 700px; /* é reponsivo, mas não pode passar de 700px */
+}
+
+footer {
+    background-color: black;
+    color: white;
+    height: 15vh;
+    font-size: 0.8rem;
+    display: flex; /* PARA AAJUDAR A ALINHAR HORIZONTAL E VERTICAL JÁ QUE O TEXT ALIGN SÓ ALINHA NA HORIZONTAL */
+    justify-content: center; /* justify e align itens omplementam o diaplay flesx e só podem ser usados qdo o diaplay flex for acionado */
+    align-items: center;
+    text-align: center;
+    font-weight: bold;    
+
+}
+
+/* REGRAS PARA O CONTEÚDO DAS PÁGINAS:pRODUTOS, SERVIÇOS E cONTATO */
+.conteudo {
+    background-color: rgb(228, 224, 224);
+    padding: 0.7rem; /* ou tb poderia ser ."7rem" , sem o "0" */
+    border-radius: 7px;
+
+}
+
+.conteudo h2 { text-align: center;
+    padding: .7rem;
+}
+
+table, th, td {
+    border: solid 2px black;
+    border-collapse: collapse; /*remove o espaço entre as bordas */
+   
+
+}
+
+table {
+    width:80%;
+    margin: auto;
+    max-width: 600px;
+
+}
+
+caption {
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: .7rem;
+}
+
+th {
+    background-color: black;
+    color: white;
+    font-size: 1.1rem;
+    padding: 0.5rem;
+}
+
+td {
+    text-align: center;
+    /* background-color: whitesmoke; */
+    /* desativei o bacckground color para poder usar a tabela zebrada mais abaixo, na linha 283 */
+}
+
+/* formatando os últimos tds da tabela */
+td:last-child { font-weight: bolder;}
+
+/* formatando os primeiros ítens da tabela */
+td:first-child {text-transform: uppercase;}
+
+/* formatando as tabelas selecionadas */
+td:nth-child(2) {text-align: right;}   /* o 2 é pq é a segunda tabela  */
+
+/* mais de uma tabela, exemplo:
+td:nth-child(1), td:nth-child(2), etc ou 
+td:nth-child(2n+1)*/
+
+
+/* even= par, odd= ímpar / tabela zebrada*/
+    tr:nth-child(even) {background-color: yellow;}
+    /* a gente só consegue fazer isso, se a cor do backgroundcollor do "td" estiver desativado, pois ele sobrepõe */
+
+    form {
+        width: 95%;
+        background-color: rgb(189, 201, 224);
+        margin: auto;
+        padding: 1rem;
+        border-radius: 10px;
+
+    }
+
+
+    /* pseudo-classe: not() 
+    permite criar excessões para determinadas regras.
+    Abaixo, estamos pegando todos os imputs exceto os do tip radio e checkbox*/
+    input:not([type=radio]):not([type=checkbox]), select, textarea {
+        border: none;
+        padding: 1%;
+        width: 100%;
+        height: 23px;
+        box-shadow: black 0 0 2px;
+    }
+
+    textarea { height: auto; }
+
+    button {
+        background-color: rgb(129, 150, 189);
+        color: black;
+        border: solid 0.5px;
+        padding: .2rem;
+        font-weight: bold;
+    
+    }
+    
+
+ 
+
+
+
+
+
+@media screen and (min-width: 530px) {
+
+    nav { background-color: white;
+        width: 70%;
+    }
+
+    nav h2 { display: none;}
+
+  .links-menu { display: flex;}
+
+  .links-menu li { border: solid 1px black;
+    width: 100%;
+
+    }
+    
+}
+
+@media screen and (min-width: 800px) {
+    html { font-size: 18px;}
+    header.limitador { height: 15vh;} /* em relação ao tamanho da tela */
+    .destaque { height: 85vh;}
+    
+}
