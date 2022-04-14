@@ -48,6 +48,9 @@ header {
     text-transform: uppercase;
     position: sticky; /* deixa o cabeçalho fixo */
     top: 0%; 
+
+    z-index: 1000; /* pode ser usado em propriesdade de position, o z é indice de profundidade, como se nesse momento, o destaque estivesse passando por trás do cabelçalho. 3D*/
+
     /* técnica de posicionamento position com coordenadas, ajudando a deixar o elemento em partes especificas da página 
     para cabeçaho e rodapé, use o sticky = top 0%*/
 
@@ -111,6 +114,8 @@ nav h2 a:focus,
     display: flex;/* largura e altura não funcionam bem no inline, por isso usa o display. O flex ajuda a resolver as dimensões e tb de alinhamento. */
     justify-content: center;
     align-items: center; /* CONTENT E ALIGN SÃO ITENS OPCIONAIS COM O FLEX, MAS ELES NÃO PODEM SER USDOS SEM O FLEX */
+
+    background-color: whitesmoke;
 
     /* tudo o que tiver a ver com alinhamento e espaçamento: usar o display flex */
 }  
