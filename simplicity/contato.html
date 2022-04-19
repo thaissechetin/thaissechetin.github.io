@@ -145,9 +145,11 @@
                 </div>
 
                 <div>
-                    <label for="mensagem">Deixe uma mensagem:</label> <br>
+                    <label for="mensagem">Mensagem: 
+                        <span id="maximo"> (restam <b id="caracteres">100</b> caracteres)</span>
+                    </label> <br>
                     <!-- o br vai deixar a caixa de mensagem embaixo -->
-                    <textarea name="mensagem" id="mensagem" cols="20" rows="5"></textarea>
+                    <textarea maxlength="100" name="mensagem" id="mensagem" cols="20" rows="5"></textarea>
                 </div>
 
                 <button type="submit">ENVIAR</button>
