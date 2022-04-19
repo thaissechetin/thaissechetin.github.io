@@ -37,13 +37,18 @@
 
             <h2>Contato</h2>
 
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero dolorum, maxime et consequatur architecto perspiciatis impedit ullam. Facilis sapiente magni accusantium consectetur qui omnis, consequatur autem iusto sunt tenetur id!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero dolorum, maxime et consequatur architecto
+                perspiciatis impedit ullam. Facilis sapiente magni accusantium consectetur qui omnis, consequatur autem
+                iusto sunt tenetur id!</p>
 
-<p>Incidunt illum, voluptatem reprehenderit quibusdam minus temporibus rem fugiat odit earum ipsum ratione excepturi quasi fugit suscipit libero, recusandae repellat culpa. Aspernatur natus omnis ad aperiam magnam suscipit, praesentium quasi.</p>
+            <p>Incidunt illum, voluptatem reprehenderit quibusdam minus temporibus rem fugiat odit earum ipsum ratione
+                excepturi quasi fugit suscipit libero, recusandae repellat culpa. Aspernatur natus omnis ad aperiam
+                magnam suscipit, praesentium quasi.</p>
 
             <form action="" method="post">
                 <div>
-                    <label for="">Nome:</label> <!--  o "for" tem que estar de acordo com o id, essencial para acessibilidade-->
+                    <label for="">Nome:</label>
+                    <!--  o "for" tem que estar de acordo com o id, essencial para acessibilidade-->
                     <input type="text" name="nome" id="nome" required>
                 </div>
 
@@ -55,7 +60,7 @@
                 <div>
                     <label for="Data">Data de nascimento:</label>
                     <input type="date" name="data" id="Data">
-                </div>  <!-- colocamos em div para poder deixar um abaixo doouttro sem perder tempo fazendo css -->
+                </div> <!-- colocamos em div para poder deixar um abaixo doouttro sem perder tempo fazendo css -->
 
                 <div>
                     <label for="telefone">Telefone:</label>
@@ -65,12 +70,12 @@
                 <div>
                     <label for="idade">Idade:</label>
                     <input type="number" name="idade" id="idade" min="18" max="150">
-                 
+
                 </div>
 
                 <div>
                     <p>Sexo:</p>
-                    <input type="radio" name="sexo" id="masculino">  <!-- radio:seleção unica -->
+                    <input type="radio" name="sexo" id="masculino"> <!-- radio:seleção unica -->
                     <label for="masculino">Masculino</label>
 
                     <input type="radio" name="sexo" id="feminino">
@@ -90,23 +95,58 @@
                     <label for="esportes">Esportes</label>
 
                     <input type="checkbox" name="interesses" id="tecnologia">
-                    <label for="tecnologia">Tecnologia</label>  
+                    <label for="tecnologia">Tecnologia</label>
                 </div>
+
+
+                <!-- INÍCIO HTML PARA CEP/ENDEREÇO -->
+                <div>
+                    <label for="cep">CEP:</label>
+                    <input type="text" id="cep" name="cep" maxlength="9" required>
+                    <button id="localizar-cep">Localizar</button>
+                    <b id="status"></b>
+                </div>
+                <div>
+                    <label for="endereco">Endereço:</label>
+                    <input type="text" id="endereco" name="endereco" size="30">
+                </div>
+                <div>
+                    <label for="bairro">Bairro:</label>
+                    <input type="text" id="bairro" name="bairro">
+                </div>
+                <div>
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" id="cidade" name="cidade">
+                </div>
+                <div>
+                    <label for="estado">Estado:</label>
+                    <input type="text" id="estado" name="estado">
+                </div>
+                <!-- /FIM HTML PARA CEP/ENDEREÇO -->
+
+
+
+
+
+
+
+
 
                 <div>
                     <label for="assunto">Assunto:</label>
                     <select name="assunto" id="assunto">
-                        <option ></option> <!-- deixar um vazio de proposito para o usuario escolher uma das opcoes -->
-                        <option >Dúvidas</option>
-                        <option >Elogios</option>
-                        <option >Reclamações</option>
-                        <option >Outros</option>
+                        <option></option> <!-- deixar um vazio de proposito para o usuario escolher uma das opcoes -->
+                        <option>Dúvidas</option>
+                        <option>Elogios</option>
+                        <option>Reclamações</option>
+                        <option>Outros</option>
                     </select>
 
                 </div>
 
                 <div>
-                    <label for="mensagem">Deixe uma mensagem:</label> <br> <!-- o br vai deixar a caixa de mensagem embaixo -->
+                    <label for="mensagem">Deixe uma mensagem:</label> <br>
+                    <!-- o br vai deixar a caixa de mensagem embaixo -->
                     <textarea name="mensagem" id="mensagem" cols="20" rows="5"></textarea>
                 </div>
 
@@ -115,7 +155,7 @@
                 input type="button value="enivar dados"> -->
 
                 <button type="reset">LIMPAR</button>
-               
+
 
 
             </form>
@@ -134,6 +174,8 @@
     </footer>
 
     <script src="js/menu.js"></script>
+
+    <script src="js/scripts.js"></script>
 
 </body>
 
